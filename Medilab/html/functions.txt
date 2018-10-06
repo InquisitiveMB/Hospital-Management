@@ -1,0 +1,214 @@
+// function nameCheck()
+// {
+//     var x = document.getElementById("uname").value;
+//     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x))
+//   {
+//     return (true)
+//   }
+//     alert("You have entered an invalid email address!")
+//     return (false)
+// } 
+
+function passCheck()
+{
+    alert("enye")
+    var pass1 = document.getElementById("psw").value;
+    var pass2 = document.getElementById("repsw").value;
+    if(pass1 == pass2)
+    {
+        alert("jk");
+        return true;
+    }
+    else
+    {
+        alert("mot")
+        return false;
+    }
+}
+function nameCheck()
+{
+    var x = document.getElementById("uname").value;
+    if(x=="")
+    {
+        uname.focus();
+        window.alert("Please enter a valid e-mail address.");
+        return false;
+    }
+    if(x.indexOf("@")>0)
+    {
+        if(/(\.\w{2,3})+$/.test(x))
+        {
+            uname.focus();
+            return true;
+        }
+        else
+        {
+            uname.focus();
+            window.alert("Please enter a valid e-mail address.");
+            return false;
+        }
+    }
+    else
+    {
+        uname.focus();
+        window.alert("Please enter a valid e-mail address.");
+        return false;
+    }
+} 
+function emailCheck()
+{
+    var x = document.getElementById("ename").value;
+    if(x=="")
+    {
+        ename.focus();
+        window.alert("Please enter a valid e-mail address.");
+        return false;
+    }
+    if(x.indexOf("@")>0)
+    {
+        if(/(\.\w{2,3})+$/.test(x))
+        {
+            return true;
+        }
+        else
+        {
+            ename.focus();
+            window.alert("Please enter a valid e-mail address.");
+            return false;
+        }
+    }
+    else
+    {
+        ename.focus();
+        window.alert("Please enter a valid e-mail address.");
+        return false;
+    }
+} 
+function phoneCheck()
+{
+    var x = document.getElementById("number").value;
+    var phoneno = /^\d{10}$/;
+    if(x.match(phoneno)){
+        return true;
+    }
+    else{
+        number.focus();
+        alert("Enter valid Mobile Number");
+        return false;
+    }
+}
+function validPass()
+{
+    var myInput = document.getElementById("psw").value;
+
+    // myInput.onfocus = function() {
+    //     document.getElementById("message").style.display = "block";
+    // }
+    
+    // // When the user clicks outside of the password field, hide the message box
+    // myInput.onblur = function() {
+    //     document.getElementById("message").style.display = "none";
+    // }
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+      // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if(myInput.value.match(lowerCaseLetters)) {  
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+    } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+    }
+      
+    // Validate capital letters
+    var upperCaseLetters = /[A-Z]/g;
+    if(myInput.value.match(upperCaseLetters)) {  
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+    } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+    }
+
+    // Validate numbers
+    var numbers = /[0-9]/g;
+    if(myInput.value.match(numbers)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+    } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+    }
+      
+      // Validate length
+    if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+    } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }
+}
+function passCheck()
+{
+        var x = document.getElementById("uname").value;
+        if (x.value == " ")
+        {
+            window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+
+        else if (x.value.indexOf("@", 0) < 0)
+        {
+            window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+
+        else if (x.value.indexOf(".", 0) < 0)
+        {
+            window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }            
+}
+function doctorType() 
+{
+    var x = document.getElementById("doctor-type").value;
+    if(x=="Dentist")
+    {
+        //document.getElementById("demo").innerHTML = "You selected: " + x;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.open("GET","dentist.xml",false);
+        xmlhttp.send();
+        xmlDoc=xmlhttp.responseXML; 
+
+        document.write("<table>");
+        var x=xmlDoc.getElementsByTagName("DT");
+        for (i=0;i<x.length;i++)
+        { 
+            document.write("<tr><td>");
+            document.write(x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+            document.write("</td></tr></b><tr><td>");
+            document.write(x[i].getElementsByTagName("dentist-name")[0].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(x[i].getElementsByTagName("contact")[0].childNodes[0].nodeValue);  
+            document.write("</td></tr><tr><td>");
+            document.write(x[i].getElementsByTagName("addr")[0].childNodes[0].nodeValue);  
+            document.write("</td><td>");
+            document.write(x[i].getElementsByTagName("open-time")[0].childNodes[0].nodeValue); 
+            document.write("</td></tr>");    
+        }
+        document.write("</table>");
+    }    
+}

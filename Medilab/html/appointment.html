@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Bootstrap Assignment</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(login.jpg);
+        background-repeat: no-repeat;  
+        background-size: cover;
+        background-position: center;
+        height: 200vh;
+    }
+    form{
+    position: relative;
+    z-index: 1;
+    /* background: #ffffff; */
+    background: rgba(71, 81, 128, 0.8);
+    max-width: 700px;
+    margin: 0 auto 100px;
+    padding: 40px;
+    text-align: center;
+}
+.form input{
+    font-family: "Roboto",sans-serif;
+    outline: 1;
+    background: #f2f2f2;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+label{
+    color: white;
+}
+h2{
+    text-align: center;
+    font: bold;
+    font-weight: 900;
+    color: white;
+    font-family: "Roboto",sans-serif;
+}
+button{
+    font-family: "Roboto",sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4caf50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+</style>
+    </head>
+    
+    <body class="container mx-4">
+
+
+        <h2>Appointment form</h2>
+            <form class="form-horizontal container center_div" action="appointment.jsp" method="post">
+                    <div class="form-group">
+                            <label for="patientName" class="control-label col-xs-4">Patient Name:</label>
+                            <div class="col-xs-3">
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                            </div>
+                            <div class="col-xs-3">
+                                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="gender" class="control-label col-xs-4">Gender:</label>
+                            <div class="col-xs-3">
+                            <select class="form-control" id="gender" name="gender">
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3">
+                                <input type="text" class="form-control" id="age" name="age" placeholder="Enter age">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="phoneNumber" class="control-label col-xs-4">Phone Number:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="##########">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="birthDate" class="control-label col-xs-4">Birth Date:</label>
+                            <div class="col-xs-6">
+                                <input type="date" class="form-control" id="birthDate" name="birthDate">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="address" class="control-label col-xs-4">Address:</label>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control" id="address1" name="address1" placeholder="Address 1">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-6">
+                                    <input type="text" class="form-control" id="address2" name="address2" placeholder="Address 2">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-3">
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                            </div>
+                            <div class="col-xs-3">
+                                    <input type="text" class="form-control" id="region" name="region" placeholder="Region">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="col-xs-4">
+                            </div>
+                            <div class="col-xs-3">
+                                    <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Postal Code">
+                            </div>
+                            <div class="col-xs-3">
+                                <select class="form-control" id="country" name="country">
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="Australia">Australia</option>
+                                </select>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                            <label for="symtoms" class="control-label col-xs-4">Mention Symtoms:</label>
+                            <div class="col-xs-6">
+                                    <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="appDate" class="control-label col-xs-4">Appointment Date:</label>
+                        <div class="col-xs-6">
+                            <input type="date" class="form-control" id="appDate" name="appDate" placeholder="Postal Code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="time" class="control-label col-xs-4">Appointment Time:</label>
+                        <div class="col-xs-6">
+                            <select class="form-control" id="time" name="time">
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="1:00">1:00 PM</option>
+                            <option value="2:00">2:00 PM</option>
+                            <option value="3:00">3:00 PM</option>
+                            <option value="4:00">4:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="appointmentType" class="control-label col-xs-4">Appointment Type:</label>
+                            
+                            <div class="col-xs-1">
+                            </div>
+                            <div class="col-xs-3">
+                                    <label class="radio"><input type="radio" name="apptype" value="Cervix checkup">Cervix checkup</label>
+                                    <label class="radio"><input type="radio" name="apptype" value="Heart checkup">Heart checkup</label>
+                                    <label class="radio"><input type="radio" name="apptype" value="Eye checkup">Eye checkup</label>
+                                    <label class="radio"><input type="radio" name="apptype" value="Hearing Test">Hearing Test</label>
+                                    <label class="radio"><input type="radio" name="apptype" value="Regular Test">Regular Test</label>
+                                    
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="col-xs-0">
+                                </div>
+                        <label for="facilityLable" class="control-label col-xs-4">Have you previously attended our facility?</label>
+                        <div class="col-xs-0">
+                            </div>
+                        <label class="radio-inline"><input type="radio" name="facility" value="Yes">Yes</label>
+                        <label class="radio-inline"><input type="radio" name="facility" value="No">No</label>
+                       
+                    </div>
+                    <div class="form-group">
+                            
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-xs-offset-4 col-xs-6">
+                            <button type="submit" class="btn btn-primary">Make appointment</button>
+                        </div>
+                    </div>
+                </form>
+    </body>
+</html>
